@@ -8,25 +8,13 @@ This guide is an attempt to document emerging concepts and note sources that are
 
 ## Definitions 📖
 
-### Large Language Model (LLM)
-
-A predictive engine trained using machine learning on a very large body of text data.
-
-### Artificial Intelligence (AI)
-
-Marketing term for LLM software that turns user prompts into text, code, or media.
-
-### Generative engine
-
-Chatbots such as ChatGPT (OpenAI), Gemini (Google), and Copilot (Microsoft).
-
-### Generative Engine Optimization (GEO)
-
-Structuring content with the goal of increasing its visibility in LLM chatbots.
-
-### Retrieval Augmented Generation (RAG)
-
-Method of incorporating data that is not part of the model into the response.
+| Term | Definition|
+| ---- | --------- |
+| Large Language Model (LLM) | A predictive engine trained using machine learning on a very large body of text data. |
+| Artificial Intelligence (AI) | Marketing term for LLM software that turns user prompts into text, code, or media. |
+| Generative engine | Chatbots such as ChatGPT (OpenAI), Gemini (Google), and Copilot (Microsoft). |
+| Generative Engine Optimization (GEO) | Structuring content with the goal of increasing its visibility in LLM chatbots. |
+| Retrieval Augmented Generation (RAG) | Method of incorporating data that is not part of the model into the response. |
 
 ## This field is very new ⚠️
 
