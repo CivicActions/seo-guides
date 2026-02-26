@@ -82,6 +82,8 @@ I think this is interesting though I want to know more about the assertion that 
 
 ## Best practices
 
-1. Don’t rely on JavaScript to render content—it will be seen far less often
-2. Add metadata fields in your CMS to support schemas that apply to your content
-3. Add Schema.org metadata to your pages where appropriate (JSON-LD in `<head>`)
+1. Use research and analytics to understand your users’ actual questions
+2. Organize and write well-structured content to address actual questions 
+3. Don’t rely on JavaScript to render content—it will be seen far less often
+4. Add metadata fields in your CMS to support schemas that apply to your content
+5. Add Schema.org metadata to your pages where appropriate (JSON-LD in `<head>`)
