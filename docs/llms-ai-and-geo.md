@@ -18,6 +18,12 @@ This guide is an attempt to document emerging concepts and note sources that are
 
 The term Generative Engine Optimization (GEO) was likely [coined](https://arxiv.org/abs/2311.09735) by Aggarwal, et al. in 2023. It wasn’t until mid-2025 that Google started seeing significant [search volume](https://trends.google.com/trends/explore?q=%2Fg%2F11md5185sw&date=today%205-y&geo=US) for the term. This is to say the field is very new. It is also in flux and full of wild claims (e.g. “SEO is dead”). So it pays to retain your skepticism until clearer guidance emerges from providers that can be tested and validated in real-world scenarios.
 
+## Why do LLM/AI tools matter for SEO?
+
+The short answer is that LLM answers in traditional search engines, and LLM tools that present a chatbot interface have led to  a decline in search engine traffic referrals, especially since 2025 for .gov sites.
+
+*	[Google users are less likely to click on links when an AI summary appears in the results](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/) — Pew Research Center (July 22, 2025)
+
 ## Topics 📋
 
 My plan is to expand these topics but for now I am using the lists to keep track of the most initially useful and informative articles and documentation. I might remove some of these as I read them more closely and will definitely add others.
@@ -82,8 +88,15 @@ I think this is interesting though I want to know more about the assertion that 
 
 ## Best practices
 
-1. Use research and analytics to understand your users’ actual questions
-2. Organize and write well-structured content to address actual questions 
-3. Don’t rely on JavaScript to render content—it will be seen far less often
-4. Add metadata fields in your CMS to support schemas that apply to your content
-5. Add Schema.org metadata to your pages where appropriate (JSON-LD in `<head>`)
+ 1. Use research and analytics to understand your users’ actual questions
+ 2. Organize and write well-structured content to address actual questions 
+ 3. Publish structured, semantic HTML content and avoid PDF, DOCX, TXT, etc.
+ 4. Avoid pages with thin content (< 200 words)
+ 5. Use headings for page structure (h2, h3, etc.) with appropriate nesting
+ 6. Use plain language where possible and terms of art as supplementary
+ 7. Ensure all content has a unique title and meta description
+ 8. Don’t rely on JavaScript to render content—it will be seen far less often
+ 9. Don’t hide content (e.g. using accordions or tabs)—it will be seen far less often
+10. Add sufficient metadata fields to your CMS to support applicable schemas
+11. Add applicable Schema.org metadata to your pages (as JSON-LD in `<head>`)
+12. Don’t block crawl (see [Crawl control for websites](crawl-control-for-websites.md))
