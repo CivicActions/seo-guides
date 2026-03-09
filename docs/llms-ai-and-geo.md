@@ -70,6 +70,9 @@ An interesting idea but highly speculative right now as to effectiveness.
 - [Maryland’s llms txt file](https://www.maryland.gov/llms.txt)
 - [AI basics: acronyms, meanings and reality](https://www.sistrix.com/ask-sistrix/ai-basics/)
 - [llms.txt: How useful is the file for LLM optimisation?](https://www.sistrix.com/ask-sistrix/ai-basics/llms-txt-how-useful-is-the-file-for-llm-optimisation/)
+- [Markdown, llms.txt and AI crawlers](https://dri.es/markdown-llms-txt-and-ai-crawlers):
+	- “And then my favorite: [llms.txt](https://llmstxt.org/), a proposed standard where sites describe their content for AI systems. My site received 52 requests for it last month. Every one came from SEO audit tools. Not a single request came from an AI answer engine or crawler. (I don't use or pay for SEO tools but apparently that doesn't stop them from auditing my site.) For fun, we also looked across Acquia’s entire hosting fleet and found about 5,000 `llms.txt` requests out of 400 million total (0.001%), nearly all from SEO tools. `llms.txt` is a solution looking for a problem. The bots it was designed for don't look for it.” –Dries Buytaert
+	- See also part 1: [The Third Audience](https://dri.es/the-third-audience).
 
 ## What can you measure? 📏
 
