@@ -24,13 +24,11 @@ The short answer is that LLM answers in traditional search engines, and LLM tool
 
 *	[Google users are less likely to click on links when an AI summary appears in the results](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/) — Pew Research Center (July 22, 2025)
 
-## Topics 📋
+## What do we know about LLMs and SEO?
 
-My plan is to expand these topics but for now I am using the lists to keep track of the most initially useful and informative articles and documentation. I might remove some of these as I read them more closely and will definitely add others.
+### General principles
 
-### Generative Engine Optimization
-
-Spoiler: it’s basically good SEO.
+Spoiler: Good SEO is basically good GEO.
 
 - [Generative Engine Optimization: The new era of search](https://www.semrush.com/blog/generative-engine-optimization/): 
 	- “[Microsoft’s official guidelines (PDF)](https://about.ads.microsoft.com/content/dam/sites/msa-about/global/common/content-lib/pdf/from-discovery-to-influence-a-guide-to-aeo-and-geo.pdf) for generative search reinforce this: make your catalogs machine-readable, structure content to answer real questions, and establish authority through credible sources and expertise signals. These are the same principles that drive traditional SEO success.”
@@ -72,6 +70,9 @@ An interesting idea but highly speculative right now as to effectiveness.
 - [Maryland’s llms txt file](https://www.maryland.gov/llms.txt)
 - [AI basics: acronyms, meanings and reality](https://www.sistrix.com/ask-sistrix/ai-basics/)
 - [llms.txt: How useful is the file for LLM optimisation?](https://www.sistrix.com/ask-sistrix/ai-basics/llms-txt-how-useful-is-the-file-for-llm-optimisation/)
+- [Markdown, llms.txt and AI crawlers](https://dri.es/markdown-llms-txt-and-ai-crawlers):
+	- “And then my favorite: [llms.txt](https://llmstxt.org/), a proposed standard where sites describe their content for AI systems. My site received 52 requests for it last month. Every one came from SEO audit tools. Not a single request came from an AI answer engine or crawler. (I don't use or pay for SEO tools but apparently that doesn't stop them from auditing my site.) For fun, we also looked across Acquia’s entire hosting fleet and found about 5,000 `llms.txt` requests out of 400 million total (0.001%), nearly all from SEO tools. `llms.txt` is a solution looking for a problem. The bots it was designed for don't look for it.” –Dries Buytaert
+	- See also part 1: [The Third Audience](https://dri.es/the-third-audience).
 
 ## What can you measure? 📏
 
