@@ -61,6 +61,17 @@ JSON-LD is a standard syntax for representing data properties and creating links
 
 (details to follow)
 
+## Examples of structured data 👀
+
+### FAQPage
+
+* **data.cms.gov**
+	- page: [Medicare Physician & Other Practitioners - by Geography and Service](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-geography-and-service)
+	- validation: [Medicare Physician page code and test results](https://validator.schema.org/#url=https%3A%2F%2Fdata.cms.gov%2Fprovider-summary-by-type-of-service%2Fmedicare-physician-other-practitioners%2Fmedicare-physician-other-practitioners-by-geography-and-service)
+	- documentation: 
+		- [FAQPage](https://schema.org/FAQPage) on Schema.org covers technical details
+		- [FAQ (FAQPage, Question, Answer) structured data](https://developers.google.com/search/docs/appearance/structured-data/faqpage) provides context
+
 ## Structured data tools 🛠️
 
 1. [Schema Markup Generator (JSON-LD)](https://technicalseo.com/tools/schema-markup-generator/) — GUI for creating a small number of popular objects
