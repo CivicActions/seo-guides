@@ -101,48 +101,41 @@ If your use case is removing a page from search results, or preventing it from e
 - [Block search indexing with noindex](https://developers.google.com/search/docs/crawling-indexing/block-indexing)
 - [Robots meta tags specifications → noindex](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#noindex) 
 
-## Stop URL parameters only from being indexed 🚦
+## Use canonicals to manage duplicate content 🚦
 
-Use `rel="canonical"` in the `<link>` element to tell crawlers not to remember or index parameterized versions of the page:
+**Note:** Canonicalization may affect crawl indirectly by sending a signal to ignore the pages that canonicalize elsewhere.
 
-	<link rel="canonical" href="https://www.example.com/search">
+Use `rel="canonical"` in the `<link>` element to tell crawlers which version of a duplicated page you consider to be primary:
 
-Suppose your search engine accepts keyword queries (e.g. “bananas”), has pagination, and provides a category filter for types of food such that…
+	<link rel="canonical" href="https://www.example.com/category/thing.html">
 
-1. a query for “bananas” produces a URL like: 
+Ideally if you find two versions of a page you decide which one to retire and redirect it to the one you want to keep. But this isn’t always possible and sometimes you have to deal with multiple cases of the same content.
 
-		https://www.example.com/search?q=bananas
+A common scenario is when tracking information is copied into a website’s content editor, such as a link on the homepage that points to: 
 
-2. a query for “bananas” with the Fruit filter selected produces a URL like: 
+	https://www.example.com/category/thing.html?utm_medium=email&utm_source=marketingplatform&utm_campaign=spring2026
 
-		https://www.example.com/search?q=bananas&c=fruit
+If a search engine crawls the homepage it may treat the above URL as an entirely different page from the one that your navigation points to, which is: 
 
-3. a query for “bananas,” with Fruit filter selected, viewing the third page of results produces a URL like: 
+	https://www.example.com/category/thing.html
 
-		https://www.example.com/search?q=bananas&c=fruit&page=2
+This is where `rel="canonical"` can help. Adding:
 
-Provided each variant contains `<link rel="canonical" href="https://www.example.com/search">` in the `<head>` crawlers will know that they should only index the canonical version of the page.
+	<link rel="canonical" href="https://www.example.com/category/thing.html">
 
-Parameterized versions will not be indexed.
+to the `<head>` of the destination page (a “self-referential” link) will let crawlers know that the publisher considers `https://www.example.com/category/thing.html` to be the canonical version of the page.
 
-If your use case is removing parameterized versions of a page from search results, publish the page with the canonical element and allow the page to be crawled. If you don’t allow crawl, bots will not know that they should remove the page from the index. (Once they have been removed you can then block crawl.)
-
-If your use case is preventing parameterized versions of a page from being indexed and they are not currently appearing in results, it’s okay to block crawl and use the canonical element as a backstop.
+Google’s short video [Canonicalization SEO Mythbusting](https://www.youtube.com/watch?v=gEWkYTPSEjs) explains some common misconceptions.
 
 ### Pagination
 
-Screaming Frog [recommends](https://www.screamingfrog.co.uk/learn-seo/canonicals/#bestpractices) that parameterized pagination URLs for content like products or articles *not be canonicalized* to the first page in the series because it may reduce the likelihood that Google will crawl and pass Pagerank to the pages in the listing.
+In sum, pages that are part of a paginated series should self-canonicalize.
+
+Screaming Frog [recommends](https://www.screamingfrog.co.uk/learn-seo/canonicals/#bestpractices) that parameterized pagination URLs for content like products or articles *not be canonicalized* to the first page in the series because it may reduce the likelihood that Google will pass Pagerank to the pages in the listing.
 
 Google also [advises using unique canonical URLs for paginated content](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading#use-urls-correctly).
 
-This may mean that you need to decide between:
-
-1. Limiting Pagerank on the one hand, and
-2. Limiting crawl on the other.
-
-Ideally the pages enumerated by the paginated listing will also appear in your site’s sitemap.xml. If that is true, and you are concerned about limiting crawl, then you may be better off canonicalizing your paginated listings to the first page.
-
-However, if you are not concerned about limiting crawl to conserve hosting resources, your best option is to ensure articles are listed in sitemap.xml and also allow paginated listings to include the page numbers in the canonical element like so:
+A paginated sequence would ideally include unique URLs in the canonical element…
 
 	<!-- on page 1 of /articles -->
 	<link rel="canonical" href="https://www.example.com/articles">
@@ -156,27 +149,29 @@ However, if you are not concerned about limiting crawl to conserve hosting resou
 	<!-- on page 4 of /articles, etc. -->
 	<link rel="canonical" href="https://www.example.com/articles?page=3">
 
-**Note:** If the content being paginated is a set of **search results** it is better to ignore the above advice, as long as there are other ways for crawlers to access the content.
+…while the pages enumerated by the listing also appear in your site’s sitemap.xml. This enables discovery via both full site crawl and sitemap.xml.
 
-	<!-- on page 1 of /search -->
-	<link rel="canonical" href="https://www.example.com/search">
+### Canonicalization and site search
+
+In short: 
+
+1. Self-canonicalize search result pages regardless of their query strings, e.g.
 	
-	<!-- on page 2 of /search -->
-	<link rel="canonical" href="https://www.example.com/search">
-	
-	<!-- on page 3 of /search -->
-	<link rel="canonical" href="https://www.example.com/search">
+		<!-- on /search?query=bananas&category=fruit&page=2 -->
+		<link rel="canonical" href="https://www.example.com/search?query=bananas&category=fruit&page=2">`
 
-	<!-- on page 4 of /search, etc. -->
-	<link rel="canonical" href="https://www.example.com/search">
+2. Use `noindex` on search result pages to prevent them from appearing in external search engines, e.g. 
+		
+		<!-- on /search, /search?query=bananas, etc. -->
+		<meta name="robots" content="noindex">
 
-Allowing site search results to be indexed opens the possibility of spam abuse if the search term is included in the URL. 
+3. Optional: If you want or need to block crawl of search results, use an appropriate `Disallow` rule in `/robots.txt`, e.g. 
 
-Combine this technique with the advice on preventing a page from being indexed (above) when the URL is anything other than `/search`.
+		Disallow: /search?
 
 ### Further reading
 
-- [Canonicals](https://www.screamingfrog.co.uk/learn-seo/canonicals/)
+- [Canonicals](https://www.screamingfrog.co.uk/learn-seo/canonicals/) by Screaming Frog
 - [How to specify a canonical with rel="canonical" and other methods](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls#best-practices)
 - [Pagination — use URLs correctly](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading#use-urls-correctly)
 
