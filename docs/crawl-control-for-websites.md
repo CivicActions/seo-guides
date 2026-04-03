@@ -87,8 +87,9 @@ This value can also be implemented as an attribute on specific links:
 
 ### Further reading
 
-- [Robots meta tags specifications → nofollow](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#nofollow)
 - [Nofollow attribute](https://www.screamingfrog.co.uk/learn-seo/nofollow/#whento)
+- [Robots meta tags specifications → nofollow](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#nofollow)
+- [Qualify your outbound links to Google](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links#nofollow)
 
 ## Prevent a page from being indexed 🛡️
 
@@ -104,7 +105,6 @@ This tells crawlers they can read the page but should not allow it to be indexed
 
 - [Block search indexing with noindex](https://developers.google.com/search/docs/crawling-indexing/block-indexing)
 - [Robots meta tags specifications → noindex](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#noindex) 
-- [Qualify your outbound links to Google](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links#nofollow)
 
 ## Use canonicals to manage duplicate content 🚦
 
